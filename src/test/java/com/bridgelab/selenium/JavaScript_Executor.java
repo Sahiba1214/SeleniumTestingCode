@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class Java_Executor {
+public class JavaScript_Executor {
 	@Test
 	public void enterText_intoDisabledTextbox() throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\HP\\Downloads\\chromedriver.exe");

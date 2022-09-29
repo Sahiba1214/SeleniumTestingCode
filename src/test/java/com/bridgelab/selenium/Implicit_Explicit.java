@@ -15,67 +15,57 @@ import com.google.common.base.Stopwatch;
 
 public class Implicit_Explicit {
 	@Test
-	public void explicit()
-	{
+	public void explicit() {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\HP\\Downloads\\chromedriver.exe");
-		WebDriver driver=new ChromeDriver();
-		
-		
-		 driver.manage().window().maximize();
-		 Stopwatch Watch=null;
-		 
-		 driver.get("https://sellglobal.ebay.in/seller-center/");
-		 
-		 WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
-		 try {
-			 Watch=Stopwatch.createStarted();
-			WebElement element= wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("START SELLING")));
+		WebDriver driver = new ChromeDriver();
+
+		driver.manage().window().maximize();
+		Stopwatch Watch = null;
+
+		driver.get("https://sellglobal.ebay.in/seller-center/");
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		try {
+			Watch = Stopwatch.createStarted();
+			WebElement element = wait
+					.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("START SELLING")));
 			element.click();
-		  driver.findElement(By.linkText("START SELLING")).click();
-		 //driver.findElement(By.linkText("wrong  SELLING")).click();
-		 }
-		 catch(Exception e)
-		 {
-			 Watch.stop();
-			 System.out.println(e);
-			 System.out.println(Watch.elapsed(TimeUnit.SECONDS) + "seconds");
-		 }
-		 
+			driver.findElement(By.linkText("START SELLING")).click();
+			// driver.findElement(By.linkText("wrong SELLING")).click();
+		} catch (Exception e) {
+			Watch.stop();
+			System.out.println(e);
+			System.out.println(Watch.elapsed(TimeUnit.SECONDS) + "seconds");
+		}
+
 	}
+
 	@Test
-	public void emplicit()
-	{
-		
+	public void emplicit() {
 
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\HP\\Downloads\\chromedriver.exe");
-	WebDriver driver=new ChromeDriver();
-	
-	
-	 driver.manage().window().maximize();
-	 Stopwatch watch=null;
-	 
-	 driver.get("https://sellglobal.ebay.in/seller-center/");
-	 
-	 //wait of 10 seconds
-	 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-	 
-	 Stopwatch Watch=null;
+		WebDriver driver = new ChromeDriver();
 
-	
-	 try {
-		 Watch=Stopwatch.createStarted();
-		 
-		driver.findElement(By.linkText("START SELLING")).click();
-	 //driver.findElement(By.linkText("wrong  SELLING")).click();
-	 }
-	 catch(Exception e)
-	 {
-		 Watch.stop();
-		 System.out.println(e);
-		 System.out.println(Watch.elapsed(TimeUnit.SECONDS) + "seconds");
-	 }
-	 
+		driver.manage().window().maximize();
+		Stopwatch watch = null;
+
+		driver.get("https://sellglobal.ebay.in/seller-center/");
+
+		// wait of 10 seconds
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+		Stopwatch Watch = null;
+
+		try {
+			Watch = Stopwatch.createStarted();
+
+			driver.findElement(By.linkText("START SELLING")).click();
+			// driver.findElement(By.linkText("wrong SELLING")).click();
+		} catch (Exception e) {
+			Watch.stop();
+			System.out.println(e);
+			System.out.println(Watch.elapsed(TimeUnit.SECONDS) + "seconds");
+		}
+
+	}
 }
-}
-
-
